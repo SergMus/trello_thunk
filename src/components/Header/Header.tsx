@@ -28,6 +28,15 @@ export const Header = (props: any) => {
                 <i className="fas fa-th"></i>
               </span>
             </NavLink>
+            <NavLink
+              to="/oauth"
+              activeClassName={styles.active}
+              style={{ textDecoration: "none" }}
+            >
+              <span className={styles.btn_span}>
+                <i className="fas fa-th"></i>
+              </span>
+            </NavLink>
           </div>
           <div className={styles.btn_menu}>
             <NavLink
