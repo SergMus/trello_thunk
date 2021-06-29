@@ -21,7 +21,8 @@ const Oauth: FunctionComponent<OauthProps> = ({
   useEffect(() => onSetToken && onSetToken(token));
   useEffect(() => onSetProfile && onSetProfile(token));
 
-  return <Redirect to={ROUTE_URLS.DASHBOARD} />;
+  // return <Redirect to={ROUTE_URLS.DASHBOARD} />;
+  return <h2>TEST {token}</h2>;
 };
 
 const mapDispatchToProps = (dispatch: any) => {
