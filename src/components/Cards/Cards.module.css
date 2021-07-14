@@ -1,21 +1,36 @@
 .card {
-    background-color: #fff;
-    border-radius: 3px;
-    box-shadow: 0 1px 0 rgb(9 30 66 / 25%);
-    cursor: pointer;
-    display: block;
-    margin-bottom: 8px;
-    max-width: 300px;
-    min-height: 20px;
-    position: relative;
-    text-decoration: none;
-    z-index: 0;
-    color: #172b4d;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgb(9 30 66 / 25%);
+  cursor: pointer;
+  display: block;
+  margin-bottom: 8px;
+  max-width: 300px;
+  min-height: 20px;
+  position: relative;
+  text-decoration: none;
+  z-index: 0;
+  color: #172b4d;
 }
 .badges {
-    padding: 10px;
-    font-size: 14px;
+  padding: 10px;
+  font-size: 14px;
 }
 .card_content {
-    padding: 8px 10px 0 10px;
-} 
+  padding: 8px 10px 0 10px;
+}
+.card:hover {
+  background-color: aliceblue;
+}
+.card_manage {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.card_manage_span {
+  padding: 3px 5px;
+}
+.card_manage_span:hover {
+  background-color: rgba(189, 242, 255, 0.678);
+  border-radius: 3px;
+}

@@ -5,7 +5,6 @@ import { App } from "./components/App/App";
 import { Provider } from "react-redux";
 import configureStore from "./store";
 
-console.log("Test");
 const store = configureStore();
 
 ReactDOM.render(

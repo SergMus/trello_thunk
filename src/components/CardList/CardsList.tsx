@@ -12,13 +12,12 @@ interface CardsListProps {
     activeListId: string,
     activeBoard: string
   ) => void;
+  removeCard: (card: string, board: string) => void;
 }
 
 export const CardsList: React.FunctionComponent<any> = (
   props: CardsListProps
 ) => {
-  console.log(props);
-
   return (
     props.lists &&
     props.lists.map((item: any) => {
@@ -40,7 +39,7 @@ export const CardsList: React.FunctionComponent<any> = (
                     );
                   })
                   .map((item: any) => {
-                    return <Cards cards={item} />;
+                    return <Cards cards={item} removeCard={props.removeCard} />;
                   })}
             </div>
             <div className={styles.list_footer}>

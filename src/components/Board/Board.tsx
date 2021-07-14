@@ -9,6 +9,7 @@ import {
   getSelectedBoard,
   getToken,
   fetchToAddCard,
+  fetchRemoveCard,
 } from "../../store";
 import { fetchLists, getLists } from "../../store/lists";
 import { BoardName } from "../BoardName";
@@ -28,6 +29,7 @@ interface BoardProps {
     activeListId: string,
     activeBoard: string
   ) => void;
+  removeCard: (card: string, board: string) => void;
 }
 
 const Board: React.FunctionComponent<BoardProps> = ({
@@ -38,6 +40,7 @@ const Board: React.FunctionComponent<BoardProps> = ({
   selectedBoard,
   cards,
   addListCard,
+  removeCard,
 }: BoardProps) => {
   useEffect(() => {
     setList(selectedBoard);
@@ -95,6 +98,7 @@ const Board: React.FunctionComponent<BoardProps> = ({
                 lists={lists}
                 cards={cards}
                 addListCard={addListCard}
+                removeCard={removeCard}
               />
               <button className={styles.addList}>
                 <span className={styles.plus}>
@@ -129,6 +133,8 @@ const mapDispatchToProps = (dispatch: any) => {
       activeListId: string,
       activeBoardId: string
     ) => dispatch(fetchToAddCard(cardName, activeListId, activeBoardId)),
+    removeCard: (card: string, board: string) =>
+      dispatch(fetchRemoveCard(card, board)),
   };
 };
 const ConnectedBoard = connect(mapStateToProps, mapDispatchToProps)(Board);

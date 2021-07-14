@@ -25,7 +25,6 @@ export const fetchLists = (boardName: string)=>{
             }
         )
         const data = await response.json();
-        console.log(data);
         
         dispatch(setLists(data));
     }
