@@ -109,3 +109,28 @@
 .text {
   float: left;
 }
+@media screen and (max-width: 768px) {
+  .container {
+    position: fixed;
+  }
+  .board_header {
+    flex-wrap: wrap;
+  }
+  .board_content_container {
+    overflow-x: scroll;
+    margin-right: 8px;
+  }
+  .board_content {
+    display: flex;
+    top: 0;
+  }
+  .addList {
+    align-self: start;
+    display: flex;
+    flex: content;
+    margin: 0 5px;
+  }
+  .text {
+    width: 200px;
+  }
+}

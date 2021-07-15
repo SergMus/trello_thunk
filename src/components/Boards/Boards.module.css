@@ -32,3 +32,12 @@
 .elemLi:hover {
   box-shadow: 5px 10px 5px #97a0af;
 }
+@media screen and (max-width: 768px) {
+  .elemLi {
+    width: 45%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

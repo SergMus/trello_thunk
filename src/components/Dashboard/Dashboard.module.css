@@ -114,3 +114,38 @@ h1 {
   border-radius: 20px;
   transition: all 0.2s ease;
 }
+@media screen and (max-width: 768px) {
+  .container_sticky {
+    flex-direction: column;
+  }
+  .left_menu {
+    top: -20px;
+    margin: 0;
+  }
+  .tab_section {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .item {
+    font-size: 0.75rem;
+    margin: 0 20px 0 0;
+    padding: 0;
+  }
+  .right_menu {
+    margin-top: 0;
+  }
+  .content_title {
+    margin-bottom: 20px;
+  }
+  .all_boards_header {
+    display: flex;
+  }
+  .header_title {
+    margin-top: 5px;
+    padding: 0;
+  }
+  .create {
+    width: 45%;
+    height: 150px;
+  }
+}
