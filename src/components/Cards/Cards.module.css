@@ -11,13 +11,16 @@
   text-decoration: none;
   z-index: 0;
   color: #172b4d;
+  min-width: 250px;
 }
 .badges {
   padding: 10px;
   font-size: 14px;
+  pointer-events: none;
 }
 .card_content {
   padding: 8px 10px 0 10px;
+  pointer-events: none;
 }
 .card:hover {
   background-color: aliceblue;
@@ -26,11 +29,17 @@
   position: absolute;
   top: 8px;
   right: 8px;
+  pointer-events: none;
 }
 .card_manage_span {
   padding: 3px 5px;
+  pointer-events: auto;
 }
 .card_manage_span:hover {
   background-color: rgba(189, 242, 255, 0.678);
   border-radius: 3px;
+}
+.card.start {
+  background-color: #ebecf0;
+  color: #ebecf0;
 }

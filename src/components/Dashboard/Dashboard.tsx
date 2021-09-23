@@ -79,8 +79,14 @@ class Dashboard extends React.Component<IDashboardProps> {
                   <div className={styles.header_title}>Активные доски</div>
                 </div>
                 <div className={styles.all_boards_content}>
-                  {this.props.boards.map((item: any) => {
-                    return <Boards items={item} setBoardId={this.setBoardId} />;
+                  {this.props.boards.map((item: any, index: any) => {
+                    return (
+                      <Boards
+                        key={index}
+                        items={item}
+                        setBoardId={this.setBoardId}
+                      />
+                    );
                   })}
                   <div className={styles.create}>создать доску</div>
                 </div>

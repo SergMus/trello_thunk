@@ -49,7 +49,7 @@ const Board: React.FunctionComponent<BoardProps> = ({
     setCards(selectedBoard);
   }, [selectedBoard, setCards]);
 
-  return boards.map((item: any) => {
+  return boards.map((item: any, index: any) => {
     if (item.id === selectedBoard) {
       return (
         <div
@@ -57,55 +57,58 @@ const Board: React.FunctionComponent<BoardProps> = ({
           style={{
             background: `url('${item.prefs.backgroundImage}') no-repeat center/cover`,
           }}
+          key={index}
         >
-          <div className={styles.board_header}>
-            <div className={styles.link_item}>
-              <BoardName name={item.name} />
-            </div>
-            <div className={[styles.link_item, styles.star].join(" ")}>
-              <span className={styles.icon_star}>
-                <i className="far fa-star"></i>
-              </span>
-            </div>
-            <span className={styles.line}></span>
-            <div className={styles.link_item}>
-              <span className={styles.icon}>
-                <i className="fas fa-user-check"></i>
-              </span>
-              <span className={styles.span_text}>Персональная</span>
-            </div>
-            <span className={styles.line}></span>
-            <div className={styles.link_item}>
-              <span className={styles.icon}>
-                <i className="fas fa-lock"></i>
-              </span>
-              <span className={styles.span_text}>Приватная</span>
-            </div>
-            <span className={styles.line}></span>
-            <span className={styles.wrapp_round_chevron}>
-              <div className={styles.link_round}>S</div>
-              <span className={styles.chevron}>
-                <i className="fas fa-angle-double-up"></i>
-              </span>
-            </span>
-            <div className={styles.link_item}>
-              <span className={styles.span_text}>Пригласить</span>
-            </div>
-          </div>
-          <div className={styles.board_content_container}>
-            <div className={styles.board_content}>
-              <CardsList
-                lists={lists}
-                cards={cards}
-                addListCard={addListCard}
-                removeCard={removeCard}
-              />
-              <button className={styles.addList}>
-                <span className={styles.plus}>
-                  <i className="fas fa-plus"></i>
+          <div className={styles.board_wrapper}>
+            <div className={styles.board_header}>
+              <div className={styles.link_item}>
+                <BoardName name={item.name} />
+              </div>
+              <div className={[styles.link_item, styles.star].join(" ")}>
+                <span className={styles.icon_star}>
+                  <i className="far fa-star"></i>
                 </span>
-                <span className={styles.text}>Добавить еще одну колонку</span>
-              </button>
+              </div>
+              <span className={styles.line}></span>
+              <div className={styles.link_item}>
+                <span className={styles.icon}>
+                  <i className="fas fa-user-check"></i>
+                </span>
+                <span className={styles.span_text}>Персональная</span>
+              </div>
+              <span className={styles.line}></span>
+              <div className={styles.link_item}>
+                <span className={styles.icon}>
+                  <i className="fas fa-lock"></i>
+                </span>
+                <span className={styles.span_text}>Приватная</span>
+              </div>
+              <span className={styles.line}></span>
+              <span className={styles.wrapp_round_chevron}>
+                <div className={styles.link_round}>S</div>
+                <span className={styles.chevron}>
+                  <i className="fas fa-angle-double-up"></i>
+                </span>
+              </span>
+              <div className={styles.link_item}>
+                <span className={styles.span_text}>Пригласить</span>
+              </div>
+            </div>
+            <div className={styles.board_content_container}>
+              <div className={styles.board_content}>
+                <CardsList
+                  lists={lists}
+                  cards={cards}
+                  addListCard={addListCard}
+                  removeCard={removeCard}
+                />
+                <button className={styles.addList}>
+                  <span className={styles.plus}>
+                    <i className="fas fa-plus"></i>
+                  </span>
+                  <span className={styles.text}>Добавить еще одну колонку</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -1,11 +1,19 @@
 import * as React from "react";
 import { useState } from "react";
-import cards from "../../store/cards";
+// import cards from "../../store/cards";
 import styles from "./../Cards/Cards.module.css";
 
 interface CardsProps {
   cards: any;
   removeCard: (card: string, board: string) => void;
+  position: any;
+  isClass?: any;
+  dragStart?: (e: any) => void;
+  dragEnter?: (e: any) => void;
+  dragLeave?: (e: any) => void;
+  dragOver?: (e: any) => void;
+  dragEnd?: (e: any) => void;
+  drop?: (e: any) => void;
 }
 
 export const Cards: React.FunctionComponent<CardsProps> = (
@@ -29,10 +37,22 @@ export const Cards: React.FunctionComponent<CardsProps> = (
 
   return (
     <div
-      className={styles.card}
+      className={
+        props.isClass === props.cards.id
+          ? [styles.card, styles.start].join(" ")
+          : styles.card
+      }
       onMouseEnter={activate}
       onMouseLeave={deActivate}
       id={props.cards.id}
+      draggable="true"
+      onDragStart={props.dragStart}
+      onDragEnd={props.dragEnd}
+      onDragOver={props.dragOver}
+      onDragEnter={props.dragEnter}
+      onDragLeave={props.dragLeave}
+      onDrop={props.drop}
+      data-position={props.position}
     >
       <div className={styles.card_content}>{props.cards.name}</div>
       {isActive ? (
