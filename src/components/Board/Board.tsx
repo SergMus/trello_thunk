@@ -49,7 +49,7 @@ const Board: React.FunctionComponent<BoardProps> = ({
     setCards(selectedBoard);
   }, [selectedBoard, setCards]);
 
-  return boards.map((item: any) => {
+  return boards.map((item: any, index: any) => {
     if (item.id === selectedBoard) {
       return (
         <div
@@ -57,6 +57,7 @@ const Board: React.FunctionComponent<BoardProps> = ({
           style={{
             background: `url('${item.prefs.backgroundImage}') no-repeat center/cover`,
           }}
+          key={index}
         >
           <div className={styles.board_wrapper}>
             <div className={styles.board_header}>
